@@ -28,7 +28,7 @@
             android:id="@+id/item_todo_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/item_todo_title"
+            android:layout_below="@id/item_todo_title"
             android:layout_alignParentStart="true"
             android:layout_toStartOf="@id/item_todo_completed"
             android:ellipsize="end"
