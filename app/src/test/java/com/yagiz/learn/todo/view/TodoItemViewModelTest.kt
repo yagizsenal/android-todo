@@ -1,7 +1,7 @@
-package com.yagiz.learn.todo
+package com.yagiz.learn.todo.view
 
+import com.yagiz.learn.todo.BaseLiveDataTest
 import com.yagiz.learn.todo.model.TodoItem
-import com.yagiz.learn.todo.view.TodoItemViewModel
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Before
@@ -13,7 +13,9 @@ class TodoItemViewModelTest : BaseLiveDataTest() {
 
     @Before
     fun setup() {
-        model = TodoItem(TITLE, CONTENT, false)
+        model = TodoItem(
+            TITLE,
+            CONTENT, false)
     }
 
     @Test
