@@ -10,10 +10,10 @@ import org.junit.rules.RuleChain
 
 abstract class BaseLayoutTest<DB : ViewDataBinding, VM : ViewModel> {
 
-    private lateinit var activity: LayoutTestActivity
+    private lateinit var activity: LayoutTestActivity<DB,VM>
 
-    private val factory = object : SingleActivityFactory<LayoutTestActivity>(LayoutTestActivity::class.java) {
-        override fun create(intent: Intent?): LayoutTestActivity {
+    private val factory = object : SingleActivityFactory<LayoutTestActivity<*, *>>(LayoutTestActivity::class.java) {
+        override fun create(intent: Intent?): LayoutTestActivity<DB,VM> {
             activity = LayoutTestActivity()
             return activity
         }
@@ -24,7 +24,7 @@ abstract class BaseLayoutTest<DB : ViewDataBinding, VM : ViewModel> {
     @JvmField
     val activityTestRule = ActivityTestRule(factory, true, true)
 
-    fun setLayout(layoutId: Int, variable: Int, value: VM) {
+    fun setLayout(layoutId: Int, variable: Int, value: VM?) {
         activity.setLayoutBindings(layoutId, variable, value)
     }
 
