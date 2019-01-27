@@ -69,12 +69,6 @@ class TodoItemViewModelLayoutTest : BaseLayoutTest<ItemTodoBinding, TodoItemView
         assertThat(viewModel.showCheck,`is`(true))
     }
 
-    @After
-    fun finish(){
-        Thread.sleep(1000)
-    }
-
-
     companion object {
         private const val TITLE = "title"
         private const val CONTENT = "content"
