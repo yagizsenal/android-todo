@@ -32,7 +32,7 @@ class TaskItemViewModelLayoutTest : BaseLayoutTest<ItemTodoBinding, TaskItemView
         val viewModel = TaskItemViewModel()
         viewModel.setModel(model)
         setLayout(
-            R.layout.item_todo,
+            R.layout.item_task,
             BR.viewModel, viewModel)
         onView(withId(R.id.item_todo_title)).check(matches(withText(TITLE)))
     }
@@ -42,7 +42,7 @@ class TaskItemViewModelLayoutTest : BaseLayoutTest<ItemTodoBinding, TaskItemView
         val viewModel = TaskItemViewModel()
         viewModel.setModel(model)
         setLayout(
-            R.layout.item_todo,
+            R.layout.item_task,
             BR.viewModel, viewModel)
         onView(withId(R.id.item_todo_content)).check(matches(withText(CONTENT)))
     }
@@ -52,7 +52,7 @@ class TaskItemViewModelLayoutTest : BaseLayoutTest<ItemTodoBinding, TaskItemView
         val viewModel = TaskItemViewModel()
         viewModel.setModel(model)
         setLayout(
-            R.layout.item_todo,
+            R.layout.item_task,
             BR.viewModel, viewModel)
         onView(withId(R.id.item_todo_completed)).check(matches(isNotChecked()))
     }
@@ -62,7 +62,7 @@ class TaskItemViewModelLayoutTest : BaseLayoutTest<ItemTodoBinding, TaskItemView
         val viewModel = TaskItemViewModel()
         viewModel.setModel(model)
         setLayout(
-            R.layout.item_todo,
+            R.layout.item_task,
             BR.viewModel,viewModel)
         onView(withId(R.id.item_todo_completed)).perform(click()).check(matches(isChecked()))
         assertThat(viewModel.showCheck,`is`(true))

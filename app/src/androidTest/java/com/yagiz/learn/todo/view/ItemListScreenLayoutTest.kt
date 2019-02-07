@@ -23,7 +23,7 @@ class ItemListScreenLayoutTest : BaseLayoutTest<ListTodoBinding, ItemListScreenV
     fun bindDataTest() {
         val viewModel = ItemListScreenViewModel()
         viewModel.setModel(data)
-        setLayout(R.layout.list_todo, BR.viewModel, viewModel)
+        setLayout(R.layout.list_task, BR.viewModel, viewModel)
         onView(withId(R.id.list_todo_rv)).check(matches(RecyclerViewMatchers.withItemCount(2)))
     }
 
