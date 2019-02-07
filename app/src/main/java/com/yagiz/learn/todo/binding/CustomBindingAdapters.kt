@@ -1,19 +1,15 @@
 package com.yagiz.learn.todo.binding
 
 import android.databinding.BindingAdapter
-import android.net.Uri
-import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
-import android.widget.LinearLayout
 import com.yagiz.learn.todo.adapter.ItemListScreenAdapter
-import com.yagiz.learn.todo.model.TodoItem
-import com.yagiz.learn.todo.view.ItemListScreenViewModel
+import com.yagiz.learn.todo.model.TaskItem
 
 @BindingAdapter("data")
-fun RecyclerView.setRecyclerView(data: List<TodoItem>){
+fun RecyclerView.setRecyclerView(data: List<TaskItem>){
     if (this.layoutManager == null) this.layoutManager = LinearLayoutManager(this.context)
     if (this.adapter == null){
         val adapter = ItemListScreenAdapter()

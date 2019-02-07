@@ -9,28 +9,27 @@ import com.yagiz.learn.todo.BR
 import com.yagiz.learn.todo.BaseLayoutTest
 import com.yagiz.learn.todo.R
 import com.yagiz.learn.todo.databinding.ItemTodoBinding
-import com.yagiz.learn.todo.model.TodoItem
+import com.yagiz.learn.todo.model.TaskItem
 import org.hamcrest.CoreMatchers.`is`
-import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class TodoItemViewModelLayoutTest : BaseLayoutTest<ItemTodoBinding, TodoItemViewModel>() {
+class TaskItemViewModelLayoutTest : BaseLayoutTest<ItemTodoBinding, TaskItemViewModel>() {
 
-    private lateinit var model : TodoItem
+    private lateinit var model : TaskItem
 
     @Before
     fun setup(){
-        model = TodoItem(
+        model = TaskItem(
             TITLE,
             CONTENT,false)
     }
 
     @Test
     fun bindTitleTest() {
-        val viewModel = TodoItemViewModel()
+        val viewModel = TaskItemViewModel()
         viewModel.setModel(model)
         setLayout(
             R.layout.item_todo,
@@ -40,7 +39,7 @@ class TodoItemViewModelLayoutTest : BaseLayoutTest<ItemTodoBinding, TodoItemView
 
     @Test
     fun bindContentTest(){
-        val viewModel = TodoItemViewModel()
+        val viewModel = TaskItemViewModel()
         viewModel.setModel(model)
         setLayout(
             R.layout.item_todo,
@@ -50,7 +49,7 @@ class TodoItemViewModelLayoutTest : BaseLayoutTest<ItemTodoBinding, TodoItemView
 
     @Test
     fun bindShowCheckTest(){
-        val viewModel = TodoItemViewModel()
+        val viewModel = TaskItemViewModel()
         viewModel.setModel(model)
         setLayout(
             R.layout.item_todo,
@@ -60,7 +59,7 @@ class TodoItemViewModelLayoutTest : BaseLayoutTest<ItemTodoBinding, TodoItemView
 
     @Test
     fun completeTodoTest(){
-        val viewModel = TodoItemViewModel()
+        val viewModel = TaskItemViewModel()
         viewModel.setModel(model)
         setLayout(
             R.layout.item_todo,

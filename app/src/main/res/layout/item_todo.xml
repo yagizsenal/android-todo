@@ -5,7 +5,7 @@
 
         <variable
             name="viewModel"
-            type="com.yagiz.learn.todo.view.TodoItemViewModel" />
+            type="com.yagiz.learn.todo.view.TaskItemViewModel" />
     </data>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
