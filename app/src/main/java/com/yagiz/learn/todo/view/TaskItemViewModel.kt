@@ -4,7 +4,7 @@ import android.arch.lifecycle.ViewModel
 import android.databinding.ObservableField
 import com.yagiz.learn.todo.model.TaskItem
 
-open class TaskItemViewModel : ViewModel() {
+open class TaskItemViewModel(private val navigator: ITaskNavigator) : ViewModel() {
 
     private val taskItem: ObservableField<TaskItem> = ObservableField()
 
@@ -17,12 +17,17 @@ open class TaskItemViewModel : ViewModel() {
 
     var showCheck: Boolean
         get() = taskItem.get()?.isCompleted == true
-        set(value){
+        set(value) {
             if (taskItem.get()?.isCompleted == value) return
             taskItem.get()?.isCompleted = value
         }
 
     fun setModel(model: TaskItem) {
         taskItem.set(model)
+    }
+
+    fun onLongClickTask(): Boolean {
+        navigator.openEditTaskFragment(taskItem.get()!!)
+        return true
     }
 }

@@ -7,12 +7,13 @@ import android.view.View
 import android.widget.ImageView
 import com.yagiz.learn.todo.adapter.ItemListScreenAdapter
 import com.yagiz.learn.todo.model.TaskItem
+import com.yagiz.learn.todo.view.ITaskNavigator
 
-@BindingAdapter("data")
-fun RecyclerView.setRecyclerView(data: List<TaskItem>){
+@BindingAdapter(value = ["data", "navigator"], requireAll = true)
+fun RecyclerView.setRecyclerView(data: List<TaskItem>, navigator: ITaskNavigator) {
     if (this.layoutManager == null) this.layoutManager = LinearLayoutManager(this.context)
-    if (this.adapter == null){
-        val adapter = ItemListScreenAdapter()
+    if (this.adapter == null) {
+        val adapter = ItemListScreenAdapter(navigator)
         this.adapter = adapter
         adapter.updateDataset(data)
         return
@@ -26,5 +27,5 @@ fun setVisibility(view: View, visible: Boolean) {
 }
 
 @BindingAdapter("imageUrl")
-fun setImageUrl(view: ImageView,imageUrl: String){
+fun setImageUrl(view: ImageView, imageUrl: String) {
 }

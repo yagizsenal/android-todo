@@ -5,15 +5,15 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.yagiz.learn.todo.databinding.ItemTaskBinding
 import com.yagiz.learn.todo.model.TaskItem
+import com.yagiz.learn.todo.view.ITaskNavigator
 import com.yagiz.learn.todo.view.TaskItemViewModel
 
-class ItemListScreenAdapter :
-    RecyclerView.Adapter<ItemListScreenAdapter.TodoItemViewHolder>() {
+class ItemListScreenAdapter(private val navigator: ITaskNavigator) : RecyclerView.Adapter<ItemListScreenAdapter.TodoItemViewHolder>() {
     private var dataset: List<TaskItem> = listOf()
 
     override fun onBindViewHolder(viewHolder: TodoItemViewHolder, position: Int) {
-        with (viewHolder.binding){
-            if (viewModel == null) viewModel = TaskItemViewModel()
+        with(viewHolder.binding) {
+            if (viewModel == null) viewModel = TaskItemViewModel(navigator)
             viewModel?.setModel(dataset[position])
             executePendingBindings()
         }
@@ -33,7 +33,7 @@ class ItemListScreenAdapter :
     }
 
     class TodoItemViewHolder(val binding: ItemTaskBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+            RecyclerView.ViewHolder(binding.root) {
 
         fun bind(viewModel: TaskItemViewModel) {
 

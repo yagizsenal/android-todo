@@ -4,7 +4,7 @@ import android.arch.lifecycle.ViewModel
 import android.databinding.*
 import com.yagiz.learn.todo.model.TaskItem
 
-class ItemListScreenViewModel : ViewModel() {
+class ItemListScreenViewModel(val navigator: ITaskNavigator) : ViewModel() {
 
     private var data: ObservableList<TaskItem> = ObservableArrayList()
 
