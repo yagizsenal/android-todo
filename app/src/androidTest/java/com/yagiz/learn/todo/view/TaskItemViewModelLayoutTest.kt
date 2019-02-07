@@ -8,7 +8,7 @@ import android.support.test.runner.AndroidJUnit4
 import com.yagiz.learn.todo.BR
 import com.yagiz.learn.todo.BaseLayoutTest
 import com.yagiz.learn.todo.R
-import com.yagiz.learn.todo.databinding.ItemTodoBinding
+import com.yagiz.learn.todo.databinding.ItemTaskBinding
 import com.yagiz.learn.todo.model.TaskItem
 import org.hamcrest.CoreMatchers.`is`
 import org.junit.Before
@@ -16,7 +16,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class TaskItemViewModelLayoutTest : BaseLayoutTest<ItemTodoBinding, TaskItemViewModel>() {
+class TaskItemViewModelLayoutTest : BaseLayoutTest<ItemTaskBinding, TaskItemViewModel>() {
 
     private lateinit var model : TaskItem
 

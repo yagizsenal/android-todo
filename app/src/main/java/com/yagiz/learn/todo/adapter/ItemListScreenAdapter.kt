@@ -3,7 +3,7 @@ package com.yagiz.learn.todo.adapter
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.yagiz.learn.todo.databinding.ItemTodoBinding
+import com.yagiz.learn.todo.databinding.ItemTaskBinding
 import com.yagiz.learn.todo.model.TaskItem
 import com.yagiz.learn.todo.view.TaskItemViewModel
 
@@ -28,11 +28,11 @@ class ItemListScreenAdapter :
 
     override fun onCreateViewHolder(parent: ViewGroup, type: Int): TodoItemViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ItemTodoBinding.inflate(inflater, parent, false)
+        val binding = ItemTaskBinding.inflate(inflater, parent, false)
         return TodoItemViewHolder(binding)
     }
 
-    class TodoItemViewHolder(val binding: ItemTodoBinding) :
+    class TodoItemViewHolder(val binding: ItemTaskBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(viewModel: TaskItemViewModel) {

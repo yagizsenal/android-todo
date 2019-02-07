@@ -7,12 +7,12 @@ import com.android.databinding.library.baseAdapters.BR
 import com.yagiz.learn.todo.BaseLayoutTest
 import com.yagiz.learn.todo.R
 import com.yagiz.learn.todo.RecyclerViewMatchers
-import com.yagiz.learn.todo.databinding.ListTodoBinding
+import com.yagiz.learn.todo.databinding.ListTaskBinding
 import com.yagiz.learn.todo.model.TaskItem
 import org.junit.Before
 import org.junit.Test
 
-class ItemListScreenLayoutTest : BaseLayoutTest<ListTodoBinding, ItemListScreenViewModel>() {
+class ItemListScreenLayoutTest : BaseLayoutTest<ListTaskBinding, ItemListScreenViewModel>() {
     private lateinit var data: List<TaskItem>
     @Before
     fun setup() {
