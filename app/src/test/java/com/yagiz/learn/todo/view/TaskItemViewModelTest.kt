@@ -6,21 +6,22 @@ import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Before
 import org.junit.Test
+import org.mockito.Mockito.mock
 
 class TaskItemViewModelTest : BaseLiveDataTest() {
 
     private lateinit var model: TaskItem
+    private lateinit var navigator: ITaskNavigator
 
     @Before
     fun setup() {
-        model = TaskItem(
-            TITLE,
-            CONTENT, false)
+        model = TaskItem(TITLE, CONTENT, false)
+        navigator = mock(ITaskNavigator::class.java)
     }
 
     @Test
     fun setModelTest() {
-        val viewModel = TaskItemViewModel()
+        val viewModel = TaskItemViewModel(navigator)
         viewModel.setModel(model)
         assertThat(viewModel.content, `is`(CONTENT))
         assertThat(viewModel.showCheck, `is`(false))
