@@ -6,7 +6,7 @@ import com.yagiz.learn.todo.model.TaskItem
 
 class ItemListScreenViewModel(val navigator: ITaskNavigator) : ViewModel() {
 
-    private var data: ObservableList<TaskItem> = ObservableArrayList()
+    private var data: ObservableList<TaskItem> = ObservableArrayList<TaskItem>()
 
     val taskList: List<TaskItem>
         get()= data
