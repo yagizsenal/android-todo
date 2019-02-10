@@ -9,6 +9,7 @@ import com.yagiz.learn.todo.R
 import com.yagiz.learn.todo.RecyclerViewMatchers
 import com.yagiz.learn.todo.databinding.ListTaskBinding
 import com.yagiz.learn.todo.model.TaskItem
+import com.yagiz.learn.todo.navigator.ITaskNavigator
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito.mock

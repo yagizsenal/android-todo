@@ -10,6 +10,7 @@ import com.yagiz.learn.todo.BR
 import com.yagiz.learn.todo.BaseLayoutTest
 import com.yagiz.learn.todo.R
 import com.yagiz.learn.todo.databinding.ActivitySigninBinding
+import com.yagiz.learn.todo.navigator.ISignInNavigator
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.CoreMatchers.not
 import org.junit.Before

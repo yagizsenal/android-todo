@@ -11,6 +11,7 @@ import com.yagiz.learn.todo.BaseLayoutTest
 import com.yagiz.learn.todo.R
 import com.yagiz.learn.todo.databinding.ItemTaskBinding
 import com.yagiz.learn.todo.model.TaskItem
+import com.yagiz.learn.todo.navigator.ITaskNavigator
 import org.hamcrest.CoreMatchers.`is`
 import org.junit.Before
 import org.junit.Test
