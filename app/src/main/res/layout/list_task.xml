@@ -17,7 +17,6 @@
             android:id="@+id/list_todo_rv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
             app:data="@{viewModel.taskList}"
             app:navigator="@{viewModel.navigator}"
             />
