@@ -27,9 +27,7 @@ class TaskItemViewModelLayoutTest : BaseLayoutTest<ItemTaskBinding, TaskItemView
 
     @Before
     fun setup() {
-        model = TaskItem(
-                TITLE,
-                CONTENT, false)
+        model = TaskItem(TITLE, CONTENT, false)
         navigator = mock(ITaskNavigator::class.java)
     }
 
@@ -37,9 +35,7 @@ class TaskItemViewModelLayoutTest : BaseLayoutTest<ItemTaskBinding, TaskItemView
     fun bindTitleTest() {
         val viewModel = TaskItemViewModel(navigator)
         viewModel.setModel(model)
-        setLayout(
-                R.layout.item_task,
-                BR.viewModel, viewModel)
+        setLayout(R.layout.item_task, BR.viewModel, viewModel)
         onView(withId(R.id.item_todo_title)).check(matches(withText(TITLE)))
     }
 
@@ -47,9 +43,7 @@ class TaskItemViewModelLayoutTest : BaseLayoutTest<ItemTaskBinding, TaskItemView
     fun bindContentTest() {
         val viewModel = TaskItemViewModel(navigator)
         viewModel.setModel(model)
-        setLayout(
-                R.layout.item_task,
-                BR.viewModel, viewModel)
+        setLayout(R.layout.item_task, BR.viewModel, viewModel)
         onView(withId(R.id.item_todo_content)).check(matches(withText(CONTENT)))
     }
 
@@ -57,9 +51,7 @@ class TaskItemViewModelLayoutTest : BaseLayoutTest<ItemTaskBinding, TaskItemView
     fun bindShowCheckTest() {
         val viewModel = TaskItemViewModel(navigator)
         viewModel.setModel(model)
-        setLayout(
-                R.layout.item_task,
-                BR.viewModel, viewModel)
+        setLayout(R.layout.item_task, BR.viewModel, viewModel)
         onView(withId(R.id.item_todo_completed)).check(matches(isNotChecked()))
     }
 

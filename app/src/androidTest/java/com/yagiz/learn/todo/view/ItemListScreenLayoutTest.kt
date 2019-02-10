@@ -1,5 +1,6 @@
 package com.yagiz.learn.todo.view
 
+import android.arch.lifecycle.MutableLiveData
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.assertion.ViewAssertions.matches
 import android.support.test.espresso.matcher.ViewMatchers.withId
@@ -15,18 +16,18 @@ import org.junit.Test
 import org.mockito.Mockito.mock
 
 class ItemListScreenLayoutTest : BaseLayoutTest<ListTaskBinding, ItemListScreenViewModel>() {
-    private lateinit var data: List<TaskItem>
+    private lateinit var list: List<TaskItem>
     private lateinit var navigator: ITaskNavigator
     @Before
     fun setup() {
-        data = listOf(TaskItem("Title1", "Content1", false), TaskItem("Title2", "Content2", true))
+        list = listOf(TaskItem("Title1", "Content1", false), TaskItem("Title2", "Content2", true))
         navigator = mock(ITaskNavigator::class.java)
     }
 
     @Test
     fun bindDataTest() {
         val viewModel = ItemListScreenViewModel(navigator)
-        viewModel.setModel(data)
+        viewModel.setModel(list)
         setLayout(R.layout.list_task, BR.viewModel, viewModel)
         onView(withId(R.id.list_todo_rv)).check(matches(RecyclerViewMatchers.withItemCount(2)))
 }

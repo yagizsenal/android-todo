@@ -1,20 +1,16 @@
 package com.yagiz.learn.todo.view
 
+import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import android.databinding.*
 import com.yagiz.learn.todo.model.TaskItem
 import com.yagiz.learn.todo.navigator.ITaskNavigator
 
 class ItemListScreenViewModel(val navigator: ITaskNavigator) : ViewModel() {
 
-    private var data: ObservableList<TaskItem> = ObservableArrayList<TaskItem>()
-
-    val taskList: List<TaskItem>
-        get()= data
+     val taskList = MutableLiveData<List<TaskItem>>()
 
     fun setModel(data: List<TaskItem>) {
-        this.data.clear()
-        this.data.addAll(data)
+        this.taskList.value = data
     }
 
 }
