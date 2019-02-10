@@ -1,6 +1,7 @@
 package com.yagiz.learn.todo.adapter
 
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.yagiz.learn.todo.databinding.ItemTaskBinding
@@ -9,17 +10,19 @@ import com.yagiz.learn.todo.navigator.ITaskNavigator
 import com.yagiz.learn.todo.view.TaskItemViewModel
 
 class ItemListScreenAdapter(private val navigator: ITaskNavigator) : RecyclerView.Adapter<ItemListScreenAdapter.TodoItemViewHolder>() {
+    private val TAG = "ItemListScreenAdapter"
     private var dataset: List<TaskItem> = listOf()
 
     override fun onBindViewHolder(viewHolder: TodoItemViewHolder, position: Int) {
         with(viewHolder.binding) {
-            if (viewModel == null) viewModel = TaskItemViewModel(navigator)
-            viewModel?.setModel(dataset[position])
+            if (this.viewModel == null) this.viewModel = TaskItemViewModel(navigator)
+            this.viewModel?.setModel(dataset[position])
             executePendingBindings()
         }
     }
 
     fun updateDataset(dataset: List<TaskItem>) {
+        Log.d(TAG,"Updating dataset")
         this.dataset = dataset
         notifyDataSetChanged()
     }
