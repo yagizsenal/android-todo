@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModel
 import android.databinding.Observable
 import android.databinding.ObservableBoolean
 import android.databinding.ObservableField
+import com.yagiz.learn.todo.navigator.ISignInNavigator
 
 class EmailSignInActivityViewModel(val navigator: ISignInNavigator) : ViewModel() {
 

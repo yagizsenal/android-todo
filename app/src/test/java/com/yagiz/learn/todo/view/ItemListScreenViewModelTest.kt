@@ -2,6 +2,7 @@ package com.yagiz.learn.todo.view
 
 import com.yagiz.learn.todo.BaseLiveDataTest
 import com.yagiz.learn.todo.model.TaskItem
+import com.yagiz.learn.todo.navigator.ITaskNavigator
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Before

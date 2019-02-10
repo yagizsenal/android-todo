@@ -3,6 +3,7 @@ package com.yagiz.learn.todo.view
 import android.arch.lifecycle.ViewModel
 import android.databinding.*
 import com.yagiz.learn.todo.model.TaskItem
+import com.yagiz.learn.todo.navigator.ITaskNavigator
 
 class ItemListScreenViewModel(val navigator: ITaskNavigator) : ViewModel() {
 

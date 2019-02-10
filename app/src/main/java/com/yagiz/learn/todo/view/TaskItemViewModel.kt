@@ -3,6 +3,7 @@ package com.yagiz.learn.todo.view
 import android.arch.lifecycle.ViewModel
 import android.databinding.ObservableField
 import com.yagiz.learn.todo.model.TaskItem
+import com.yagiz.learn.todo.navigator.ITaskNavigator
 
 open class TaskItemViewModel(private val navigator: ITaskNavigator) : ViewModel() {
 

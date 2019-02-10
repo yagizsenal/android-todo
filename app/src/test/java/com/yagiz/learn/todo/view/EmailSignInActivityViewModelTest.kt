@@ -1,6 +1,7 @@
 package com.yagiz.learn.todo.view
 
 import android.databinding.ObservableField
+import com.yagiz.learn.todo.navigator.ISignInNavigator
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Before

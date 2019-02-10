@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.ImageView
 import com.yagiz.learn.todo.adapter.ItemListScreenAdapter
 import com.yagiz.learn.todo.model.TaskItem
-import com.yagiz.learn.todo.view.ITaskNavigator
+import com.yagiz.learn.todo.navigator.ITaskNavigator
 
 @BindingAdapter(value = ["data", "navigator"], requireAll = true)
 fun RecyclerView.setRecyclerView(data: List<TaskItem>, navigator: ITaskNavigator) {

@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.yagiz.learn.todo.databinding.ItemTaskBinding
 import com.yagiz.learn.todo.model.TaskItem
-import com.yagiz.learn.todo.view.ITaskNavigator
+import com.yagiz.learn.todo.navigator.ITaskNavigator
 import com.yagiz.learn.todo.view.TaskItemViewModel
 
 class ItemListScreenAdapter(private val navigator: ITaskNavigator) : RecyclerView.Adapter<ItemListScreenAdapter.TodoItemViewHolder>() {

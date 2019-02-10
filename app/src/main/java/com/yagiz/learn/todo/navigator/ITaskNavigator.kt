@@ -1,4 +1,4 @@
-package com.yagiz.learn.todo.view
+package com.yagiz.learn.todo.navigator
 
 import com.yagiz.learn.todo.model.TaskItem
 
