@@ -61,7 +61,6 @@ class TaskItemViewModelLayoutTest : BaseLayoutTest<ItemTaskBinding, TaskItemView
         viewModel.setModel(model)
         setLayout(R.layout.item_task, BR.viewModel, viewModel)
         onView(withId(R.id.item_todo_completed)).perform(click()).check(matches(isChecked()))
-        assertThat(viewModel.showCheck, `is`(true))
     }
 
     @Test

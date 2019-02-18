@@ -43,7 +43,8 @@
             android:layout_height="32dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:checked="@={viewModel.showCheck}" />
+            android:onCheckedChanged="@{() -> viewModel.onCheckedChanged()}"
+            android:checked="@{viewModel.showCheck}" />
 
     </RelativeLayout>
 </layout>
