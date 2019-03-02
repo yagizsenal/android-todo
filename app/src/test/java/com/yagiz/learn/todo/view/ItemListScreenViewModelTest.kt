@@ -24,7 +24,7 @@ class ItemListScreenViewModelTest: BaseLiveDataTest(){
     fun setModelTest(){
         val viewModel = ItemListScreenViewModel(navigator)
         viewModel.setModel(data)
-        assertThat(viewModel.taskList,`is`(data))
+        assertThat(viewModel.taskList.value,`is`(data))
     }
 
 }

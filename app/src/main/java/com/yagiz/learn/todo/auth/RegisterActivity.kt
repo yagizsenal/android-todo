@@ -1,4 +1,4 @@
-package com.yagiz.learn.todo
+package com.yagiz.learn.todo.auth
 
 import android.content.Intent
 import android.databinding.DataBindingUtil
@@ -7,9 +7,9 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.yagiz.learn.todo.databinding.ActivitySigninBinding
-import com.yagiz.learn.todo.navigator.IRegisterNavigator
-import com.yagiz.learn.todo.view.RegisterActivityViewModel
+import com.yagiz.learn.todo.MainActivity
+import com.yagiz.learn.todo.R
+import com.yagiz.learn.todo.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity(), IRegisterNavigator {
 
@@ -23,7 +23,8 @@ class RegisterActivity : AppCompatActivity(), IRegisterNavigator {
                         proceedToMainActivity()
                     } else {
                         Log.w(TAG, "createUserWithEmail:failure", task.exception)
-                        Toast.makeText(baseContext, task.exception?.message ?: "Authentication failed", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(baseContext, task.exception?.message
+                                ?: "Authentication failed", Toast.LENGTH_SHORT).show()
                     }
                 }
     }
@@ -39,12 +40,12 @@ class RegisterActivity : AppCompatActivity(), IRegisterNavigator {
         }
 
         val viewModel = RegisterActivityViewModel(this)
-        val binding = DataBindingUtil.setContentView<ActivitySigninBinding>(this, R.layout.activity_signin)
+        val binding = DataBindingUtil.setContentView<ActivityRegisterBinding>(this, R.layout.activity_register)
         binding.viewModel = viewModel
         binding.executePendingBindings()
     }
 
-    private fun proceedToMainActivity(){
+    private fun proceedToMainActivity() {
         startActivity(Intent(this, MainActivity::class.java))
         finish()
     }

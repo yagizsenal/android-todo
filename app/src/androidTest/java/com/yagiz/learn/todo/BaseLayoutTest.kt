@@ -21,7 +21,7 @@ abstract class BaseLayoutTest<DB : ViewDataBinding, VM : ViewModel> {
 
     }
 
-    val activityTestRule = ActivityTestRule(factory, true, true)
+    private val activityTestRule = ActivityTestRule(factory, true, true)
 
     @Rule
     @JvmField

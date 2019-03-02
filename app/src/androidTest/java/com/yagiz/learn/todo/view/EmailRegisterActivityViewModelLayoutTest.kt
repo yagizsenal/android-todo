@@ -9,8 +9,9 @@ import android.support.test.runner.AndroidJUnit4
 import com.yagiz.learn.todo.BR
 import com.yagiz.learn.todo.BaseLayoutTest
 import com.yagiz.learn.todo.R
-import com.yagiz.learn.todo.databinding.ActivitySigninBinding
-import com.yagiz.learn.todo.navigator.IRegisterNavigator
+import com.yagiz.learn.todo.auth.IRegisterNavigator
+import com.yagiz.learn.todo.auth.RegisterActivityViewModel
+import com.yagiz.learn.todo.databinding.ActivityRegisterBinding
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.CoreMatchers.not
 import org.junit.Before
@@ -20,7 +21,7 @@ import org.mockito.Mockito.mock
 import org.mockito.Mockito.verify
 
 @RunWith(AndroidJUnit4::class)
-class EmailRegisterActivityViewModelLayoutTest : BaseLayoutTest<ActivitySigninBinding, RegisterActivityViewModel>() {
+class EmailRegisterActivityViewModelLayoutTest : BaseLayoutTest<ActivityRegisterBinding, RegisterActivityViewModel>() {
     private lateinit var viewModel: RegisterActivityViewModel
     private lateinit var navigator: IRegisterNavigator
 
@@ -32,7 +33,7 @@ class EmailRegisterActivityViewModelLayoutTest : BaseLayoutTest<ActivitySigninBi
 
     @Test
     fun nullViewModelTest() {
-        setLayout(R.layout.activity_signin, BR.viewModel, null)
+        setLayout(R.layout.activity_register, BR.viewModel, null)
 
         onView(withId(R.id.et_email)).check(matches(withText("")))
         onView(withId(R.id.et_password)).check(matches(withText("")))
@@ -41,7 +42,7 @@ class EmailRegisterActivityViewModelLayoutTest : BaseLayoutTest<ActivitySigninBi
 
     @Test
     fun bindEmailTest() {
-        setLayout(R.layout.activity_signin, BR.viewModel, viewModel)
+        setLayout(R.layout.activity_register, BR.viewModel, viewModel)
         onView(withId(R.id.et_email)).perform(replaceText("Email"))
 
         assertThat(viewModel.email.get(), `is`("Email"))
@@ -50,7 +51,7 @@ class EmailRegisterActivityViewModelLayoutTest : BaseLayoutTest<ActivitySigninBi
 
     @Test
     fun bindPasswordTest() {
-        setLayout(R.layout.activity_signin, BR.viewModel, viewModel)
+        setLayout(R.layout.activity_register, BR.viewModel, viewModel)
         onView(withId(R.id.et_password)).perform(replaceText("Password"))
 
         assertThat(viewModel.password.get(), `is`("Password"))
@@ -58,7 +59,7 @@ class EmailRegisterActivityViewModelLayoutTest : BaseLayoutTest<ActivitySigninBi
 
     @Test
     fun signInButtonEnabledBindTest() {
-        setLayout(R.layout.activity_signin, BR.viewModel, viewModel)
+        setLayout(R.layout.activity_register, BR.viewModel, viewModel)
         onView(withId(R.id.et_email)).perform(click(), typeText("Email"))
         onView(withId(R.id.et_password)).perform(click(), typeText("Password"))
         onView(withId(R.id.btn_signin)).check(matches(isEnabled()))
@@ -66,7 +67,7 @@ class EmailRegisterActivityViewModelLayoutTest : BaseLayoutTest<ActivitySigninBi
 
     @Test
     fun clickSignInButtonTest() {
-        setLayout(R.layout.activity_signin, BR.viewModel, viewModel)
+        setLayout(R.layout.activity_register, BR.viewModel, viewModel)
         onView(withId(R.id.et_email)).perform(click(), typeText("Email"))
         onView(withId(R.id.et_password)).perform(click(), typeText("Password"))
         Espresso.closeSoftKeyboard()

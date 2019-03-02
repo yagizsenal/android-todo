@@ -1,7 +1,8 @@
 package com.yagiz.learn.todo.view
 
 import android.databinding.ObservableField
-import com.yagiz.learn.todo.navigator.IRegisterNavigator
+import com.yagiz.learn.todo.auth.IRegisterNavigator
+import com.yagiz.learn.todo.auth.RegisterActivityViewModel
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Before
@@ -22,21 +23,21 @@ class EmailRegisterActivityViewModelTest {
 
     @Test
     fun setEmailTest() {
-        viewModel.email = ObservableField("Email")
+        viewModel.email.set("Email")
         assertThat(viewModel.email.get(), `is`("Email"))
     }
 
     @Test
     fun setPasswordTest() {
-        viewModel.password = ObservableField("Password")
+        viewModel.password.set("Password")
         assertThat(viewModel.password.get(), `is`("Password"))
     }
 
     @Test
     fun setSignInButtonEnabledTest() {
-        viewModel.email = ObservableField("Email")
-        viewModel.password = ObservableField("Password")
-        assertThat(viewModel.signInButtonEnabled.get(), `is`(true))
+        viewModel.email.set("Email")
+        viewModel.password.set("Password")
+        assertThat(viewModel.registerButtonEnabled.get(), `is`(true))
     }
 
 }

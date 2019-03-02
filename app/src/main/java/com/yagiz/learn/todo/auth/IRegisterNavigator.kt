@@ -1,4 +1,4 @@
-package com.yagiz.learn.todo.navigator
+package com.yagiz.learn.todo.auth
 
 interface IRegisterNavigator {
 

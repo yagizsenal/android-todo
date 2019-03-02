@@ -1,14 +1,13 @@
-package com.yagiz.learn.todo.view
+package com.yagiz.learn.todo.auth
 
 import android.arch.lifecycle.ViewModel
 import android.databinding.Observable
 import android.databinding.ObservableBoolean
 import android.databinding.ObservableField
-import com.yagiz.learn.todo.navigator.IRegisterNavigator
 
 class RegisterActivityViewModel(val navigator: IRegisterNavigator) : ViewModel() {
 
-    val signInButtonEnabled: ObservableBoolean = ObservableBoolean(false)
+    val registerButtonEnabled: ObservableBoolean = ObservableBoolean(false)
     var email: ObservableField<String> = ObservableField()
     var password: ObservableField<String> = ObservableField()
 
@@ -16,10 +15,10 @@ class RegisterActivityViewModel(val navigator: IRegisterNavigator) : ViewModel()
         val callback = object : Observable.OnPropertyChangedCallback() {
             override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
                 if (password.get() == "" || email.get() == "") {
-                    updateSignInButtonEnabled(false)
+                    updateRegisterButtonEnabled(false)
                     return
                 }
-                updateSignInButtonEnabled(true)
+                updateRegisterButtonEnabled(true)
             }
         }
         callback.let {
@@ -29,14 +28,14 @@ class RegisterActivityViewModel(val navigator: IRegisterNavigator) : ViewModel()
     }
 
 
-    private fun updateSignInButtonEnabled(value: Boolean) {
-        with(signInButtonEnabled) {
+    private fun updateRegisterButtonEnabled(value: Boolean) {
+        with(registerButtonEnabled) {
             set(value)
             notifyChange()
         }
     }
 
-    fun onSignInButtonClicked() {
+    fun onRegisterButtonClicked() {
         navigator.signInWithEmail(email.get()!!, password.get()!!)
     }
 
