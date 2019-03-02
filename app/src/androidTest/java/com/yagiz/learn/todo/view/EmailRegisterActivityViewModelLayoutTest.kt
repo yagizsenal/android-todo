@@ -10,7 +10,7 @@ import com.yagiz.learn.todo.BR
 import com.yagiz.learn.todo.BaseLayoutTest
 import com.yagiz.learn.todo.R
 import com.yagiz.learn.todo.databinding.ActivitySigninBinding
-import com.yagiz.learn.todo.navigator.ISignInNavigator
+import com.yagiz.learn.todo.navigator.IRegisterNavigator
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.CoreMatchers.not
 import org.junit.Before
@@ -20,13 +20,13 @@ import org.mockito.Mockito.mock
 import org.mockito.Mockito.verify
 
 @RunWith(AndroidJUnit4::class)
-class EmailSignInActivityViewModelLayoutTest : BaseLayoutTest<ActivitySigninBinding, EmailSignInActivityViewModel>() {
+class EmailRegisterActivityViewModelLayoutTest : BaseLayoutTest<ActivitySigninBinding, EmailSignInActivityViewModel>() {
     private lateinit var viewModel: EmailSignInActivityViewModel
-    private lateinit var navigator: ISignInNavigator
+    private lateinit var navigator: IRegisterNavigator
 
     @Before
     fun setup() {
-        navigator = mock(ISignInNavigator::class.java)
+        navigator = mock(IRegisterNavigator::class.java)
         viewModel = EmailSignInActivityViewModel(navigator)
     }
 

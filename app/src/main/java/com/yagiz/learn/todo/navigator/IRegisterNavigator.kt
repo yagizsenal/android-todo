@@ -1,6 +1,6 @@
 package com.yagiz.learn.todo.navigator
 
-interface ISignInNavigator {
+interface IRegisterNavigator {
 
     fun signInWithEmail(email: String, password: String)
 }

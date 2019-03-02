@@ -8,12 +8,12 @@ import android.util.Log
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.yagiz.learn.todo.databinding.ActivitySigninBinding
-import com.yagiz.learn.todo.navigator.ISignInNavigator
+import com.yagiz.learn.todo.navigator.IRegisterNavigator
 import com.yagiz.learn.todo.view.EmailSignInActivityViewModel
 
-class SignInActivity : AppCompatActivity(), ISignInNavigator {
+class RegisterActivity : AppCompatActivity(), IRegisterNavigator {
 
-    private val TAG = "SignInActivity"
+    private val TAG = "RegisterActivity"
 
     private lateinit var auth: FirebaseAuth
     override fun signInWithEmail(email: String, password: String) {

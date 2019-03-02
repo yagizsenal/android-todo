@@ -1,21 +1,21 @@
 package com.yagiz.learn.todo.view
 
 import android.databinding.ObservableField
-import com.yagiz.learn.todo.navigator.ISignInNavigator
+import com.yagiz.learn.todo.navigator.IRegisterNavigator
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito.mock
 
-class EmailSignInActivityViewModelTest {
+class EmailRegisterActivityViewModelTest {
 
-    private lateinit var navigator: ISignInNavigator
+    private lateinit var navigator: IRegisterNavigator
     private lateinit var viewModel: EmailSignInActivityViewModel
 
     @Before
     fun setup() {
-        navigator = mock(ISignInNavigator::class.java)
+        navigator = mock(IRegisterNavigator::class.java)
         viewModel = EmailSignInActivityViewModel(navigator)
     }
 
