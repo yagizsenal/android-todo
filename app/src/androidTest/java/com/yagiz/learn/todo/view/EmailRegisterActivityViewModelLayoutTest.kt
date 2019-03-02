@@ -20,14 +20,14 @@ import org.mockito.Mockito.mock
 import org.mockito.Mockito.verify
 
 @RunWith(AndroidJUnit4::class)
-class EmailRegisterActivityViewModelLayoutTest : BaseLayoutTest<ActivitySigninBinding, EmailSignInActivityViewModel>() {
-    private lateinit var viewModel: EmailSignInActivityViewModel
+class EmailRegisterActivityViewModelLayoutTest : BaseLayoutTest<ActivitySigninBinding, RegisterActivityViewModel>() {
+    private lateinit var viewModel: RegisterActivityViewModel
     private lateinit var navigator: IRegisterNavigator
 
     @Before
     fun setup() {
         navigator = mock(IRegisterNavigator::class.java)
-        viewModel = EmailSignInActivityViewModel(navigator)
+        viewModel = RegisterActivityViewModel(navigator)
     }
 
     @Test

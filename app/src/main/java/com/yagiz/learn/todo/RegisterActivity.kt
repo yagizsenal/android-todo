@@ -9,7 +9,7 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.yagiz.learn.todo.databinding.ActivitySigninBinding
 import com.yagiz.learn.todo.navigator.IRegisterNavigator
-import com.yagiz.learn.todo.view.EmailSignInActivityViewModel
+import com.yagiz.learn.todo.view.RegisterActivityViewModel
 
 class RegisterActivity : AppCompatActivity(), IRegisterNavigator {
 
@@ -38,7 +38,7 @@ class RegisterActivity : AppCompatActivity(), IRegisterNavigator {
             return
         }
 
-        val viewModel = EmailSignInActivityViewModel(this)
+        val viewModel = RegisterActivityViewModel(this)
         val binding = DataBindingUtil.setContentView<ActivitySigninBinding>(this, R.layout.activity_signin)
         binding.viewModel = viewModel
         binding.executePendingBindings()

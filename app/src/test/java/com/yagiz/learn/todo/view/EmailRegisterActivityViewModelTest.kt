@@ -11,12 +11,12 @@ import org.mockito.Mockito.mock
 class EmailRegisterActivityViewModelTest {
 
     private lateinit var navigator: IRegisterNavigator
-    private lateinit var viewModel: EmailSignInActivityViewModel
+    private lateinit var viewModel: RegisterActivityViewModel
 
     @Before
     fun setup() {
         navigator = mock(IRegisterNavigator::class.java)
-        viewModel = EmailSignInActivityViewModel(navigator)
+        viewModel = RegisterActivityViewModel(navigator)
     }
 
 

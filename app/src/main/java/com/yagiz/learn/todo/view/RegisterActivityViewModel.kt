@@ -4,9 +4,9 @@ import android.arch.lifecycle.ViewModel
 import android.databinding.Observable
 import android.databinding.ObservableBoolean
 import android.databinding.ObservableField
-import com.yagiz.learn.todo.navigator.ISignInNavigator
+import com.yagiz.learn.todo.navigator.IRegisterNavigator
 
-class EmailSignInActivityViewModel(val navigator: ISignInNavigator) : ViewModel() {
+class RegisterActivityViewModel(val navigator: IRegisterNavigator) : ViewModel() {
 
     val signInButtonEnabled: ObservableBoolean = ObservableBoolean(false)
     var email: ObservableField<String> = ObservableField()
