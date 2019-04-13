@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#F4511E</color>
+    <color name="colorPrimaryDark">#B91400</color>
+    <color name="colorPrimaryLight">#FF844C</color>
+    <color name="colorAccent">#42A5F5</color>
+    <color name="colorAccentDark">#0077C2</color>
+    <color name="colorAccentLight">#80D6FF</color>
 
     <color name="black">#000000</color>
-    <color name="white">#ffffff</color>
+    <color name="black_high_importancy">#DE000000</color>
+    <color name="black_med_importancy">#99000000</color>
+    <color name="black_disabled">#61000000</color>
+
+    <color name="white_high_importancy">#DEFFFFFF</color>
+    <color name="white_med_importancy">#99FFFFFF</color>
+    <color name="white_disabled">#61FFFFFF</color>
+
     <color name="button_orange">#f98f31</color>
     <color name="gray_signin">#959ca8</color>
 </resources>
