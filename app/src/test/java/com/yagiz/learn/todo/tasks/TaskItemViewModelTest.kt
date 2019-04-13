@@ -1,13 +1,10 @@
-package com.yagiz.learn.todo.view
+package com.yagiz.learn.todo.tasks
 
 import android.arch.lifecycle.Lifecycle
 import android.arch.lifecycle.LifecycleOwner
 import android.arch.lifecycle.LifecycleRegistry
 import android.arch.lifecycle.Observer
 import com.yagiz.learn.todo.BaseLiveDataTest
-import com.yagiz.learn.todo.model.TaskItem
-import com.yagiz.learn.todo.navigator.ITaskNavigator
-import io.grpc.internal.SharedResourceHolder
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Before

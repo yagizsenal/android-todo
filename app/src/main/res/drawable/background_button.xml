@@ -2,13 +2,13 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_enabled="true">
         <shape>
-            <solid android:color="@color/button_orange" />
+            <solid android:color="@color/colorAccentDark" />
             <corners android:radius="10dp" />
         </shape>
     </item>
     <item android:state_enabled="false">
-        <shape>
-            <solid android:color="@color/gray_signin" />
+        <shape android:tint="@color/gray_signin">
+            <solid android:color="@color/colorAccentDark" />
             <corners android:radius="10dp" />
         </shape>
     </item>

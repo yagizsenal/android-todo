@@ -67,7 +67,7 @@
             android:enabled="@{viewModel.registerButtonEnabled}"
             android:onClick="@{() -> viewModel.onRegisterButtonClicked()}"
             android:text="Register"
-            android:textColor="@color/white" />
+            android:textColor="@color/white_high_importancy" />
 
     </RelativeLayout>
 </layout>

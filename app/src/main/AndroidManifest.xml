@@ -20,6 +20,7 @@
             </intent-filter>
 
         </activity>
+        <activity android:name=".auth.LoginActivity" />
     </application>
 
 </manifest>

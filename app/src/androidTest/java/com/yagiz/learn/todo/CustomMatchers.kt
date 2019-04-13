@@ -7,12 +7,13 @@ import org.hamcrest.Description
 import org.hamcrest.TypeSafeMatcher
 
 object RecyclerViewMatchers {
-    var recyclerViewId : Int? = null
+    var recyclerViewId: Int? = null
 
     fun withItemCount(itemCount: Int): BoundedMatcher<View, RecyclerView> {
         return object : BoundedMatcher<View, RecyclerView>(RecyclerView::class.java) {
             override fun matchesSafely(item: RecyclerView?): Boolean {
-                return item?.adapter?.itemCount == itemCount
+                if (item?.adapter?.itemCount == null) return itemCount == 0
+                return item.adapter?.itemCount == itemCount
             }
 
             override fun describeTo(description: Description?) {
@@ -35,7 +36,7 @@ object RecyclerViewMatchers {
                     val recyclerView = view?.rootView?.findViewById<RecyclerView>(recyclerViewId!!)
                     if (recyclerView != null && recyclerView.id == recyclerViewId) {
                         childView =
-                            recyclerView.findViewHolderForAdapterPosition(position)?.itemView
+                                recyclerView.findViewHolderForAdapterPosition(position)?.itemView
                     } else {
                         return false
                     }

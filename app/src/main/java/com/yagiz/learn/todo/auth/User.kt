@@ -1,6 +1,6 @@
 package com.yagiz.learn.todo.auth
 
-import com.yagiz.learn.todo.model.TaskItem
+import com.yagiz.learn.todo.tasks.TaskItem
 
 data class User(
         val username: String,

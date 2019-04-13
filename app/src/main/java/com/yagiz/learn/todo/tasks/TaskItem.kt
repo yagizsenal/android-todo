@@ -1,4 +1,4 @@
-package com.yagiz.learn.todo.model
+package com.yagiz.learn.todo.tasks
 
 data class TaskItem(
     var title: String?,

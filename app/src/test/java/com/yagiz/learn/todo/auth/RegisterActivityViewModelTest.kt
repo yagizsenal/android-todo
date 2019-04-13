@@ -1,22 +1,19 @@
-package com.yagiz.learn.todo.view
+package com.yagiz.learn.todo.auth
 
-import android.databinding.ObservableField
-import com.yagiz.learn.todo.auth.IRegisterNavigator
-import com.yagiz.learn.todo.auth.RegisterActivityViewModel
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito.mock
 
-class EmailRegisterActivityViewModelTest {
+class RegisterActivityViewModelTest {
 
-    private lateinit var navigator: IRegisterNavigator
+    private lateinit var navigator: IAuthNavigator
     private lateinit var viewModel: RegisterActivityViewModel
 
     @Before
     fun setup() {
-        navigator = mock(IRegisterNavigator::class.java)
+        navigator = mock(IAuthNavigator::class.java)
         viewModel = RegisterActivityViewModel(navigator)
     }
 

@@ -1,10 +1,10 @@
-package com.yagiz.learn.todo.provider
+package com.yagiz.learn.todo.tasks
 
 import android.arch.lifecycle.MutableLiveData
 import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.yagiz.learn.todo.model.TaskItem
+import com.yagiz.learn.todo.tasks.TaskItem
 
 class TaskItemProvider {
     private val TAG = "TaskItemProvider"
@@ -17,6 +17,7 @@ class TaskItemProvider {
                 .get()
                 .addOnSuccessListener { result ->
                     val data = mutableListOf<TaskItem>()
+                    Log.d(TAG,result.toString())
                     val tasks = result.data!!["tasks"] as ArrayList<*>
                     for (i in 0..(tasks.size - 1)) {
                         val task = tasks[i] as HashMap<String, Any>

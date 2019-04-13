@@ -1,14 +1,11 @@
-package com.yagiz.learn.todo.adapter
+package com.yagiz.learn.todo.tasks
 
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.yagiz.learn.todo.MainActivity
 import com.yagiz.learn.todo.databinding.ItemTaskBinding
-import com.yagiz.learn.todo.model.TaskItem
-import com.yagiz.learn.todo.navigator.ITaskNavigator
-import com.yagiz.learn.todo.view.TaskItemViewModel
 
 class ItemListScreenAdapter(private val navigator: ITaskNavigator) : RecyclerView.Adapter<ItemListScreenAdapter.TaskItemViewHolder>() {
     private val TAG = "ItemListScreenAdapter"
@@ -22,7 +19,7 @@ class ItemListScreenAdapter(private val navigator: ITaskNavigator) : RecyclerVie
     }
 
     fun updateDataset(dataset: List<TaskItem>) {
-        Log.d(TAG,"Updating dataset")
+        Log.d(TAG, "Updating dataset")
         this.dataset = dataset
         notifyDataSetChanged()
     }
@@ -33,7 +30,7 @@ class ItemListScreenAdapter(private val navigator: ITaskNavigator) : RecyclerVie
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemTaskBinding.inflate(inflater, parent, false).apply {
             viewModel = TaskItemViewModel(navigator)
-            setLifecycleOwner(parent.context as MainActivity)
+            setLifecycleOwner(parent.context as AppCompatActivity)
         }
         return TaskItemViewHolder(binding)
     }

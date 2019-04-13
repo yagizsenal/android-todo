@@ -1,4 +1,4 @@
-package com.yagiz.learn.todo.view
+package com.yagiz.learn.todo.tasks
 
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.action.ViewActions.click
@@ -10,9 +10,6 @@ import com.yagiz.learn.todo.BR
 import com.yagiz.learn.todo.BaseLayoutTest
 import com.yagiz.learn.todo.R
 import com.yagiz.learn.todo.databinding.ItemTaskBinding
-import com.yagiz.learn.todo.model.TaskItem
-import com.yagiz.learn.todo.navigator.ITaskNavigator
-import org.hamcrest.CoreMatchers.`is`
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith

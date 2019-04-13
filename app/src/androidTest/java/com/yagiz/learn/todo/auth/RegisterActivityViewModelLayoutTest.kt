@@ -1,4 +1,4 @@
-package com.yagiz.learn.todo.view
+package com.yagiz.learn.todo.auth
 
 import android.support.test.espresso.Espresso
 import android.support.test.espresso.Espresso.onView
@@ -9,8 +9,6 @@ import android.support.test.runner.AndroidJUnit4
 import com.yagiz.learn.todo.BR
 import com.yagiz.learn.todo.BaseLayoutTest
 import com.yagiz.learn.todo.R
-import com.yagiz.learn.todo.auth.IRegisterNavigator
-import com.yagiz.learn.todo.auth.RegisterActivityViewModel
 import com.yagiz.learn.todo.databinding.ActivityRegisterBinding
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.CoreMatchers.not
@@ -21,13 +19,13 @@ import org.mockito.Mockito.mock
 import org.mockito.Mockito.verify
 
 @RunWith(AndroidJUnit4::class)
-class EmailRegisterActivityViewModelLayoutTest : BaseLayoutTest<ActivityRegisterBinding, RegisterActivityViewModel>() {
+class RegisterActivityViewModelLayoutTest : BaseLayoutTest<ActivityRegisterBinding, RegisterActivityViewModel>() {
     private lateinit var viewModel: RegisterActivityViewModel
-    private lateinit var navigator: IRegisterNavigator
+    private lateinit var navigator: IAuthNavigator
 
     @Before
     fun setup() {
-        navigator = mock(IRegisterNavigator::class.java)
+        navigator = mock(IAuthNavigator::class.java)
         viewModel = RegisterActivityViewModel(navigator)
     }
 
@@ -72,7 +70,7 @@ class EmailRegisterActivityViewModelLayoutTest : BaseLayoutTest<ActivityRegister
         onView(withId(R.id.et_password)).perform(click(), typeText("Password"))
         Espresso.closeSoftKeyboard()
         onView(withId(R.id.btn_signin)).perform(click())
-        verify(navigator).signInWithEmail("Email", "Password")
+        verify(navigator).signInWithEmailAndPass("Email", "Password")
     }
 
 }

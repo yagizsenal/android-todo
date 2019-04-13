@@ -5,7 +5,7 @@ import android.databinding.Observable
 import android.databinding.ObservableBoolean
 import android.databinding.ObservableField
 
-class RegisterActivityViewModel(val navigator: IRegisterNavigator) : ViewModel() {
+class RegisterActivityViewModel(val navigator: IAuthNavigator) : ViewModel() {
 
     val registerButtonEnabled: ObservableBoolean = ObservableBoolean(false)
     var email: ObservableField<String> = ObservableField()
@@ -36,7 +36,7 @@ class RegisterActivityViewModel(val navigator: IRegisterNavigator) : ViewModel()
     }
 
     fun onRegisterButtonClicked() {
-        navigator.signInWithEmail(email.get()!!, password.get()!!)
+        navigator.registerWithEmailAndPass(email.get()!!, password.get()!!)
     }
 
 }

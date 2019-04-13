@@ -7,16 +7,19 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.yagiz.learn.todo.MainActivity
+import com.yagiz.learn.todo.tasks.TasksActivity
 import com.yagiz.learn.todo.R
 import com.yagiz.learn.todo.databinding.ActivityRegisterBinding
 
-class RegisterActivity : AppCompatActivity(), IRegisterNavigator {
+class RegisterActivity : AppCompatActivity(), IAuthNavigator {
+    override fun signInWithEmailAndPass(email: String, password: String) {
+        //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
     private val TAG = "RegisterActivity"
 
     private lateinit var auth: FirebaseAuth
-    override fun signInWithEmail(email: String, password: String) {
+    override fun registerWithEmailAndPass(email: String, password: String) {
         auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
@@ -46,7 +49,7 @@ class RegisterActivity : AppCompatActivity(), IRegisterNavigator {
     }
 
     private fun proceedToMainActivity() {
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(this, TasksActivity::class.java))
         finish()
     }
 }
