@@ -20,7 +20,9 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".auth.LoginActivity" />
+        <activity
+            android:name=".auth.login.LoginActivity"
+            android:theme="@style/AppTheme.NoTitle" />
     </application>
 
 </manifest>

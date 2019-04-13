@@ -8,6 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.NoTitle" parent="AppTheme">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
     <style name="input_field" parent="TextAppearance.AppCompat.Body2">
         <item name="android:textColor">@color/black_high_importancy</item>
         <item name="android:textColorHint">@color/black_disabled</item>

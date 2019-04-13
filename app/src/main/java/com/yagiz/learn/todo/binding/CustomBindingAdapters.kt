@@ -6,8 +6,9 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
-import com.yagiz.learn.todo.tasks.ItemListScreenAdapter
+import android.widget.TextView
 import com.yagiz.learn.todo.tasks.ITaskNavigator
+import com.yagiz.learn.todo.tasks.ItemListScreenAdapter
 import com.yagiz.learn.todo.tasks.TaskItem
 
 @BindingAdapter(value = ["data", "navigator"], requireAll = true)
@@ -25,4 +26,10 @@ fun setVisibility(view: View, visible: Boolean) {
 
 @BindingAdapter("imageUrl")
 fun setImageUrl(view: ImageView, imageUrl: String) {
+}
+
+@BindingAdapter("onClick")
+fun TextView.setOnClickTextView(listener: View.OnClickListener) {
+    this.setOnClickListener(listener)
+    this.isClickable = true
 }
