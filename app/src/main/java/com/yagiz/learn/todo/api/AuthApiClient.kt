@@ -11,7 +11,7 @@ open class AuthApiClient @Inject constructor() {
     var user: User? = null
         protected set
 
-    open fun register(email: String, username:String,password: String): Boolean {
+    open fun register(email: String, username: String, password: String): Boolean {
         user = User("registeredUser", arrayListOf())
         return true;
     }
@@ -25,7 +25,7 @@ open class AuthApiClient @Inject constructor() {
         return true;
     }
 
-    fun logout(){
+    fun logout() {
         user = null
     }
 

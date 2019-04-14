@@ -8,7 +8,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-open class TasksRepository @Inject constructor(private val client: TasksApiClient) {
+open class TasksRepository @Inject constructor(val client: TasksApiClient) {
 
     open fun getTasks(): MutableStatefulLiveData<ArrayList<TaskItem>> {
         val tasks = MutableStatefulLiveData<ArrayList<TaskItem>>(DataState.STATE_LOADING, arrayListOf())
