@@ -5,6 +5,7 @@ import android.databinding.DataBindingUtil
 import android.os.Bundle
 import com.yagiz.learn.todo.R
 import com.yagiz.learn.todo.api.ApiClient
+import com.yagiz.learn.todo.auth.register.RegisterActivity
 import com.yagiz.learn.todo.databinding.ActivityLoginBinding
 import com.yagiz.learn.todo.getDoneActivity
 import com.yagiz.learn.todo.tasks.TasksActivity
@@ -21,7 +22,8 @@ class LoginActivity : getDoneActivity(), ILoginActivityNavigator {
         val auth = apiClient.auth
 
         if (auth.user != null) {
-            proceedToMainActivity()
+            startActivity(Intent(this, TasksActivity::class.java))
+            finish()
             return
         }
         val viewModel = LoginActivityViewModel(auth, this)
@@ -30,17 +32,12 @@ class LoginActivity : getDoneActivity(), ILoginActivityNavigator {
         binding.viewModel = viewModel
     }
 
-    private fun proceedToMainActivity() {
-        startActivity(Intent(this, TasksActivity::class.java))
-        finish()
-    }
-
     override fun inject() {
         activityComponent.inject(this)
     }
 
     override fun onRegister() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        startActivity(Intent(this, RegisterActivity::class.java))
     }
 
     override fun onForgotPassword() {
