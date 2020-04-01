@@ -1,10 +1,8 @@
-package com.yagiz.learn.todo
+package com.yagiz.learn.todo.base.activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.yagiz.learn.todo.base.activity.ActivityComponent
-import com.yagiz.learn.todo.base.activity.ActivityModule
-import com.yagiz.learn.todo.base.activity.DaggerActivityComponent
+import com.yagiz.learn.todo.base.application.getDoneApplication
 
 abstract class getDoneActivity : AppCompatActivity() {
 

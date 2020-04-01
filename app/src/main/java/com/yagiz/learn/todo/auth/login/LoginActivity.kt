@@ -1,13 +1,14 @@
 package com.yagiz.learn.todo.auth.login
 
+import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import com.yagiz.learn.todo.R
 import com.yagiz.learn.todo.api.ApiClient
 import com.yagiz.learn.todo.auth.register.RegisterActivity
+import com.yagiz.learn.todo.base.activity.getDoneActivity
 import com.yagiz.learn.todo.databinding.ActivityLoginBinding
-import com.yagiz.learn.todo.getDoneActivity
 import com.yagiz.learn.todo.tasks.TasksActivity
 import javax.inject.Inject
 
@@ -26,7 +27,7 @@ class LoginActivity : getDoneActivity(), ILoginActivityNavigator {
             finish()
             return
         }
-        val viewModel = LoginActivityViewModel(auth, this)
+        val viewModel = ViewModelProviders.of(this).get(LoginActivityViewModel::class.java)
         val binding = DataBindingUtil.setContentView<ActivityLoginBinding>(this, R.layout.activity_login)
         binding.setLifecycleOwner(this)
         binding.viewModel = viewModel

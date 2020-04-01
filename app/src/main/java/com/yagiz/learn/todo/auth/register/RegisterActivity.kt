@@ -6,7 +6,7 @@ import android.os.Bundle
 import com.yagiz.learn.todo.R
 import com.yagiz.learn.todo.api.ApiClient
 import com.yagiz.learn.todo.databinding.ActivityRegisterBinding
-import com.yagiz.learn.todo.getDoneActivity
+import com.yagiz.learn.todo.base.activity.getDoneActivity
 import com.yagiz.learn.todo.tasks.TasksActivity
 import javax.inject.Inject
 

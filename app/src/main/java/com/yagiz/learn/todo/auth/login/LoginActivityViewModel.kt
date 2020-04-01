@@ -1,18 +1,36 @@
 package com.yagiz.learn.todo.auth.login
 
-import android.arch.lifecycle.ViewModel
 import android.databinding.Observable
 import android.databinding.ObservableBoolean
 import android.databinding.ObservableField
+import com.yagiz.learn.todo.api.ApiClient
 import com.yagiz.learn.todo.api.AuthApiClient
+import com.yagiz.learn.todo.auth.IAuthNavigator
+import com.yagiz.learn.todo.base.viewmodel.getDoneViewModel
+import javax.inject.Inject
 
-class LoginActivityViewModel(private val authApiClient: AuthApiClient, private val navigator: ILoginActivityNavigator) : ViewModel() {
+class LoginActivityViewModel : getDoneViewModel() {
+
+    @Inject
+    lateinit var apiClient: ApiClient
+
+    @Inject
+    lateinit var navigator: IAuthNavigator
+
+    private lateinit var authApiClient: AuthApiClient
 
     val loginButtonEnabled: ObservableBoolean = ObservableBoolean(false)
     val email: ObservableField<String> = ObservableField("")
     val password: ObservableField<String> = ObservableField("")
 
-    init {
+    override fun inject() {
+        viewModelComponent.inject(this)
+    }
+
+    override fun setup() {
+        super.setup()
+        authApiClient = apiClient.auth
+
         val callback = object : Observable.OnPropertyChangedCallback() {
 
             override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
@@ -47,7 +65,7 @@ class LoginActivityViewModel(private val authApiClient: AuthApiClient, private v
     }
 
     fun onRegisterButtonClicked() {
-        navigator.onRegister()
+        navigator.onProceedToRegister()
     }
 
     fun onForgotPasswordClicked() {

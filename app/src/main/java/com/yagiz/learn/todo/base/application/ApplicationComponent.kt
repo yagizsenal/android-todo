@@ -5,7 +5,6 @@ import android.content.Context
 import com.yagiz.learn.todo.api.ApiClient
 import com.yagiz.learn.todo.base.ApplicationContext
 import com.yagiz.learn.todo.base.repository.RepositoryManager
-import com.yagiz.learn.todo.getDoneApplication
 import dagger.Component
 import javax.inject.Singleton
 

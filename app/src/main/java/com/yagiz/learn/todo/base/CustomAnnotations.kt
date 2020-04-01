@@ -15,3 +15,8 @@ annotation class ApplicationContext
 @Retention(AnnotationRetention.RUNTIME)
 annotation class ActivityScope
 
+@Scope
+@Retention(AnnotationRetention.RUNTIME)
+annotation class ViewModelScope
+
+

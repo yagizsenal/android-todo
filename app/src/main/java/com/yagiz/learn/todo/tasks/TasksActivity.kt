@@ -8,7 +8,7 @@ import com.yagiz.learn.todo.api.ApiClient
 import com.yagiz.learn.todo.auth.login.LoginActivity
 import com.yagiz.learn.todo.base.repository.RepositoryManager
 import com.yagiz.learn.todo.databinding.ListTaskBinding
-import com.yagiz.learn.todo.getDoneActivity
+import com.yagiz.learn.todo.base.activity.getDoneActivity
 import javax.inject.Inject
 
 class TasksActivity : getDoneActivity(), ITaskNavigator {

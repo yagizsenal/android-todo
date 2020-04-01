@@ -1,11 +1,8 @@
-package com.yagiz.learn.todo
+package com.yagiz.learn.todo.base.application
 
 import android.app.Application
 import android.content.Context
 import com.yagiz.learn.todo.api.ApiClient
-import com.yagiz.learn.todo.base.application.ApplicationComponent
-import com.yagiz.learn.todo.base.application.ApplicationModule
-import com.yagiz.learn.todo.base.application.DaggerApplicationComponent
 import com.yagiz.learn.todo.base.repository.RepositoryManager
 import javax.inject.Inject
 
